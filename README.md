@@ -2,11 +2,11 @@
 
 ## 프로젝트 환경설정
 
-Project: Gradle Project
-Spring Boot: 2.54
-Language: Java 8
- IDE: InteliJ
-Tomcat: 9.0.53
+   - Project: Gradle Project
+   - Spring Boot: 2.54
+   - Language: Java 8
+   - IDE: InteliJ
+   - Tomcat: 9.0.53
  
 
 *스프링부트 라이브러리
