@@ -9,7 +9,13 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+//    private final MemberRepository memberRepository = new MemoryMemberRepository();
+         private final MemberRepository memberRepository;
+
+         // 내부에서 직접넣지 않고 외부에서 넣는 방식으로 바꾼것
+         public MemberService(MemberRepository memberRepository){
+             this.memberRepository = memberRepository;
+         }
 
     //회원가입
     public Long join(Member member) {
