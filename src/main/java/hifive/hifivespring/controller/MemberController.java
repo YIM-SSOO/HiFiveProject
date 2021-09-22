@@ -5,8 +5,11 @@ import hifive.hifivespring.domain.Member;
 import hifive.hifivespring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class MemberController {
@@ -23,6 +26,7 @@ public class MemberController {
     }
 
     //http://localhost:8999/members/new
+    //회원 등록
     @GetMapping("/members/new")
     public String createForm(){
         return "members/createMemberForm";
@@ -39,5 +43,13 @@ public class MemberController {
 
         return "redirect:/";
     }
-
+    
+    
+    //회원 조회
+    @GetMapping("/members")
+    public String list(Model model){
+        List<Member> members = memberService.findMembers();
+        model.addAttribute("members", members);
+        return "/members/memberList";
+    }
 }
