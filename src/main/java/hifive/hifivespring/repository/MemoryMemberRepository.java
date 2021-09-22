@@ -1,14 +1,16 @@
 package hifive.hifivespring.repository;
 
 import hifive.hifivespring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
 
     private static Map<Long, Member> store = new HashMap<>();
-    private static long sequence = 0L;     // key 값을 0,1,2 .. 만들어주는 것이 sequnece
+    private static long sequence = 0L;     // key 값을 0,1,2 .. 만들어주는 것이 sequence
 
     @Override
     public Member save(Member member) {

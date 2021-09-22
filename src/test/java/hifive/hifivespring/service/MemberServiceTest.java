@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberServiceTest {
 
 
-//    MemberService memberService = new MemberService();
-//    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    // MemberService memberService = new MemberService();
+    // MemoryMemberRepository memberRepository = new MemoryMemberRepository();
     MemberService memberService;
     MemoryMemberRepository memberRepository;
 
@@ -26,7 +26,7 @@ class MemberServiceTest {
     public void beforeEach(){
         //테스트가 실행할 때마다 각각 생성해준다
         //독립적으로 실행되야하기때문이다.
-        //이러면 같은 memoryMemberrepository가 사용이되는 것이다.
+        //이러면 같은 MemoryMemberRepository 가 사용이되는 것이다.
 
         //DI (외부에서 주입시켜주는 것)
         memberRepository = new MemoryMemberRepository();
@@ -72,14 +72,12 @@ class MemberServiceTest {
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
         //assertThrows(NullPointerException.class, () -> memberService.join(member2));
-        /*
-        try {
+        /* try {
             memberService.join(member2);
             fail();
         } catch (IllegalStateException e) {
             assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-        }
-        */
+        }*/
 
         //then
     }
