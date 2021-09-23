@@ -1,13 +1,15 @@
 package hifive.hifivespring;
 
 
-import hifive.hifivespring.repository.JdbcMemberRepository;
+
+import hifive.hifivespring.repository.JdbcTemplateMemberRepository;
 import hifive.hifivespring.repository.MemberRepository;
 import hifive.hifivespring.repository.MemoryMemberRepository;
 import hifive.hifivespring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 
 import javax.sql.DataSource;
 
@@ -29,7 +31,8 @@ public class SpringConfig {
     public MemberRepository memberRepository(){
 
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
 
     }
 

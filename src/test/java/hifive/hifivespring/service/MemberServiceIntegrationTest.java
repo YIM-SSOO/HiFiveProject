@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 @Transactional
         //데이터베이스는 트랙젝션의 개념이 있다.
-        // @Transactional을 Test 케이스에 달면 테스트를 실행할때  트랜젝션을 먼저 실행을 한다.
+        // @Transactional을 Test케이스에 달면 테스트를 실행할때  트랜젝션을 먼저 실행을 한다.
         //그리고 디비의 데이터를 인서트쿼리를 하고 다 넣은 다음에 테스트가 끝나면 롤백을 해준다!
         //그래서 디비에 넣었던 데이터가 반영이 안되고 깔끔하게 지워진다.(실제 반영이 되지 않음)
     // 즉 반복해서 테스트를 실행할 수 있어진다.
@@ -24,13 +24,13 @@ class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
     @Autowired MemberRepository memberRepository;
-    
+
 //회원가입
     @Test
     void join() {
         //given - 이런 상황이 주어져서
         Member member = new Member();
-        member.setName("abc");
+        member.setName("aaa");
 
         //when - 이것을 실행 했을 때 --> 이걸 검증하는거구나
         Long saveId = memberService.join(member);
