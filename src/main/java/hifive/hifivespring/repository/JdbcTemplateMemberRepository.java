@@ -19,6 +19,7 @@ import java.util.Optional;
 public class JdbcTemplateMemberRepository implements MemberRepository {
 
     //** jdbcTemplate 메뉴얼 공부해보기.
+    // 쿼리가 있는 JDBC
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired //생성자가 하나일때는 @Autowired를 생략할 수 있다.
